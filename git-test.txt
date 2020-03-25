@@ -1,2 +1,3 @@
 Getting Git is legit
+git is lit
 

@@ -1,3 +1,13 @@
-.fancy-header{
-    color: purple;
-}
+
+h1 {text-align: center}
+header {font-style: italic; color: red;
+    text-decoration: underline}
+body {background-color: aqua;
+    background-image: url("galaxy.jpg");
+background-size: contain;
+    font-family:'Ubuntu',sans-serif;
+color: yellow;}
+ul {list-style: square}
+ol {
+    list-style-type: upper-roman;}
+

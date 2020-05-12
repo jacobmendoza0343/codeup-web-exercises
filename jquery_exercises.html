@@ -6,11 +6,22 @@
 </head>
 <body>
 <script src="js/jquery-2.2.4.js"></script>
+<h1 id="Hello1" class="codeup">Hello</h1>
+<p id="Yo" class="codeup">Yo</p>
+<div id="list" class="list">
+    <ul>
+        <li id="codeup">
+            hello
+        </li>
+        <li>
+            hello
+        </li>
+    </ul>
+</div>
 <script>
-    "use strict";
-    $(document).ready(function () {
-        alert('the dom has finished loading');
-    });
+
+    $('li').css('font-size', '20px');
+    $('h1, p, li').css('background-color',"yellow")
 </script>
 </body>
 </html>

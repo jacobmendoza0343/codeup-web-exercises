@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mapbox api</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox_maps_api.js"></script>
+</head>
+<body>
+<div id='map' style='width: 100%; height: 400px;'></div>
+<script>
+
+    var restaurants = [
+        {
+            name: 'Nama',
+            address: 'Nama Ramen, San Antonio, TX',
+            message: 'It\'s great!'
+        },
+        {
+            name: 'Sanchos',
+            address: '628 Jackson St, San Antonio, TX',
+            message: 'Too good!'
+        },
+        {
+            name: 'Whiskey Cake',
+            address: 'Whiskey Cake, San Antonio, TX',
+            message: 'Awesome!'
+        }
+    ];
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center:[-98.4936, 29.4241],
+        zoom: 10,
+
+    });
+
+restaurants.forEach(function(restaurant) {
+    geocode(restaurant.address, mapboxKey).then(function (coords) {
+        var marker = new mapboxgl.Marker()
+        .setLngLat(coords)
+        .addTo(map);
+        var popup = new mapboxgl.Popup()
+        .setHTML("<h3>" + restaurant.name+ "</h3>");
+        marker.setPopup(popup);
+    });
+
+
+});
+
+
+</script>
+
+
+</body>
+</html>

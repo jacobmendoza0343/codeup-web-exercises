@@ -2,3 +2,4 @@
 *.iml
 secret.txt
 keys.js
+js/jquery-2.2.4.js
